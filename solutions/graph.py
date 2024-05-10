@@ -3,10 +3,10 @@
 from solutions.tools.secret import get_secret
 from langchain_community.graphs import Neo4jGraph
 # dotenv
-import os
-from dotenv import load_dotenv
-# 環境參數
-load_dotenv()
+# import os
+# from dotenv import load_dotenv
+# # 環境參數
+# load_dotenv()
 
 # 註解變數取的方式
 # NEO4J_URI = os.getenv("NEO4J_URI")
