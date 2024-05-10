@@ -1,3 +1,7 @@
+# secret.py
+# 原本沒有導入 dotenv，這裡要添加
+import os
+# from dotenv import load_dotenv
 # 判斷環境取得密鑰
 # def get_secret(key):
 #     try:
