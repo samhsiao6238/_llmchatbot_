@@ -1,5 +1,6 @@
 # secret.py
 # 原本沒有導入 dotenv，這裡要添加
+import streamlit as st
 import os
 # from dotenv import load_dotenv
 
