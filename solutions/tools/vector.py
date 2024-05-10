@@ -2,16 +2,22 @@
 from langchain_community.vectorstores.neo4j_vector import Neo4jVector
 from langchain.chains import RetrievalQA
 from solutions.llm import llm, embeddings
+from solutions.tools.secret import get_secret
+
 # 載入套件
 import os
 from dotenv import load_dotenv
 # 載入環境變數
 load_dotenv()
 
-# 取得環境變數
-NEO4J_URI = os.getenv("NEO4J_URI")
-NEO4J_USERNAME = os.getenv("NEO4J_USERNAME")
-NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
+# 註解變數取的方式
+# NEO4J_URI = os.getenv("NEO4J_URI")
+# NEO4J_USERNAME = os.getenv("NEO4J_USERNAME")
+# NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
+# 改寫用 get_secret 函數取得變數
+NEO4J_URI = get_secret("NEO4J_URI")
+NEO4J_USERNAME = get_secret("NEO4J_USERNAME")
+NEO4J_PASSWORD = get_secret("NEO4J_PASSWORD")
 
 neo4jvector = Neo4jVector.from_existing_index(
     embeddings,                 # <1>
